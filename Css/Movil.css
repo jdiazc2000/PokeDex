@@ -1,0 +1,89 @@
+/*- Movil -*/
+@media (max-width: 523px){
+    body{
+        padding-top: 60px;
+    }
+       
+    /*- Nav -*/
+    header{
+        height: 60px;
+        box-shadow: 0 3px 3px 0 rgb(244, 67, 54);
+    }
+    .logo{
+        font-size: 30px;
+        padding: 0 20px;
+        line-height: 60px;
+    }
+    
+    .nav{
+        box-shadow: 0 5px 5px 0 rgba(0,0,0,.2);
+        
+    }
+    .nav-menu{
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(244, 67, 54);
+        position: fixed;
+        left: 0;
+        top: 44px;
+        width: 100%;
+        padding: 20px 0;
+
+        height: calc(100% - 60px);
+        overflow-y: auto;
+
+        left:100%;
+        transition: left 0.3s;
+    }
+    
+    .nav-menu-item{
+        line-height: 70px;
+    }
+    
+
+    .nav-link:hover,
+    .nav-menu-link_active{
+        background: none;
+        background-color: #c9b7b665;
+    }
+
+    .nav-toogle{
+        display: block;
+    }
+
+    .nav-menu_visible{
+        left: 0;
+    }
+
+    .nav-toogle:focus:not(:focus-visible){
+        outline: none;
+    }
+    /*- Nav -*/
+ 
+    
+    /*- PokeContenedor -*/
+    .poke-contenedor {
+        width: 99%;
+        margin-left: 0;
+        gap: 10px;
+    }
+
+    .pokemon-block {
+        padding: 2px;
+    }
+    .poke-contenedor-buscar{
+        grid-template-columns: 1fr 1fr; 
+    }
+
+    #nombrepokemon {
+        width: 53%;
+        position: static;
+    }
+
+    .paginación{
+        text-align: center;
+    }
+
+}
+
+
