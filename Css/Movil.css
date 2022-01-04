@@ -1,3 +1,23 @@
+@media (max-width: 456px){
+    .poke-contenedor{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .poke-contenedor-buscar{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 290px){
+    .poke-contenedor{
+       grid-template-columns: 1fr;
+    }   
+
+    .poke-contenedor-buscar{
+        grid-template-columns: 1fr;
+     }   
+}
+
 /*- Movil -*/
 @media (max-width: 523px){
     body{
@@ -71,9 +91,7 @@
     .pokemon-block {
         padding: 2px;
     }
-    .poke-contenedor-buscar{
-        grid-template-columns: 1fr 1fr; 
-    }
+    
 
     #nombrepokemon {
         width: 53%;

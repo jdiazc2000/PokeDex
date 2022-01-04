@@ -163,6 +163,7 @@ function mostrarIndex(){
     document.getElementById('poke-contenedor').style.display = 'none'
     document.getElementById('container-portada').style.backgroundImage = "url(../Pokedex/Imagenes/Portada.webp"
     borrarPokemon();
+    document.getElementById("nav-menu").className = "nav-menu";
 }
 
 
