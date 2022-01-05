@@ -2,7 +2,6 @@
 const pokemonContenedor = document.querySelector(".poke-contenedor");
 const anterior = document.querySelector("#anterior");
 const siguiente = document.querySelector("#siguiente");
-
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
 const pokemon = document.getElementById('nombrepokemon');
 const btnbusc = document.getElementById('btnbusc');
@@ -10,6 +9,7 @@ const btnborr = document.getElementById('btnborr');
 const btnindx = document.getElementById('volverIndex');
 const appNode = document.getElementById('poke-contenedor');
 
+//Buttons//
 btnbusc.addEventListener('click', insertarPokemon);
 btnborr.addEventListener('click', borrarPokemon);
 
@@ -165,7 +165,8 @@ function mostrarIndex(){
     borrarPokemon();
     document.getElementById("nav-menu").className = "nav-menu";
     
-    //Ocultar boton Anterior
+
+//Ocultar boton Anterior
     if(offset == 1){
         document.getElementById('anterior').style.display = 'none';
     }
@@ -192,7 +193,7 @@ anterior.addEventListener("click", () => {
         fetchPokemons(offset, limit);     
     }
 
-
+//Si el index es 1, oculta el boton = Anterior//
     if(offset == 1){
         document.getElementById('anterior').style.display = 'none';
     }
@@ -205,7 +206,6 @@ siguiente.addEventListener("click", () => {
     fetchPokemons(offset, limit);
     document.getElementById('anterior').style.display = 'inline'
 })
-
 
 
 //Borrar pokemones buscados
