@@ -1,6 +1,6 @@
 //Pokémon Variables//
 const pokemonContenedor = document.querySelector(".poke-contenedor");
-const previo = document.querySelector("#previo");
+const anterior = document.querySelector("#anterior");
 const siguiente = document.querySelector("#siguiente");
 
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
@@ -86,7 +86,7 @@ function insertarPokemon() {
             } else {
                 document.getElementById('poke-contenedor-index').style.display = 'none'
                 document.getElementById('container-portada').style.backgroundImage = "url(../Pokedex/Imagenes/Buscar.webp"
-                document.getElementById('previo').style.display = 'none'
+                document.getElementById('anterior').style.display = 'none'
                 document.getElementById('siguiente').style.display = 'none'
                 document.getElementById('btnborr').style.display = 'inline'
                 document.getElementById('volverIndex').style.display = 'inline'
@@ -156,7 +156,7 @@ function insertarPokemon() {
 //Mostrar resultado de busqueda de pokemones a traves resultado ingresado en el formulario//
 function mostrarIndex(){
     document.getElementById('poke-contenedor-index').style.display = 'grid'
-    document.getElementById('previo').style.display = 'inline'
+    document.getElementById('anterior').style.display = 'inline'
     document.getElementById('siguiente').style.display = 'inline'
     document.getElementById('btnborr').style.display = 'none'
     document.getElementById('volverIndex').style.display = 'none'
@@ -164,6 +164,11 @@ function mostrarIndex(){
     document.getElementById('container-portada').style.backgroundImage = "url(../Pokedex/Imagenes/Portada.webp"
     borrarPokemon();
     document.getElementById("nav-menu").className = "nav-menu";
+    
+    //Ocultar boton Anterior
+    if(offset == 1){
+        document.getElementById('anterior').style.display = 'none';
+    }
 }
 
 
@@ -171,7 +176,7 @@ function mostrarIndex(){
 function mostrarBuscador(){
     document.getElementById('poke-contenedor-index').style.display = 'none'
     document.getElementById('container-portada').style.backgroundImage = "url(../Pokedex/Imagenes/Buscar.webp"
-    document.getElementById('previo').style.display = 'none'
+    document.getElementById('anterior').style.display = 'none'
     document.getElementById('siguiente').style.display = 'none'
     document.getElementById('btnborr').style.display = 'inline'
     document.getElementById('volverIndex').style.display = 'inline'
@@ -179,14 +184,18 @@ function mostrarBuscador(){
     document.getElementById("nav-menu").className = "nav-menu";
 }
 
-//Boton previo//
-previo.addEventListener("click", () => {
+//Boton anterior//
+anterior.addEventListener("click", () => {
     if (offset != 1) {
         offset -= 9;
         removeChildNodes(pokemonContenedor);
-        fetchPokemons(offset, limit);
+        fetchPokemons(offset, limit);     
     }
 
+
+    if(offset == 1){
+        document.getElementById('anterior').style.display = 'none';
+    }
 })
 
 //Boton siguiente//
@@ -194,6 +203,7 @@ siguiente.addEventListener("click", () => {
     offset += 9;
     removeChildNodes(pokemonContenedor);
     fetchPokemons(offset, limit);
+    document.getElementById('anterior').style.display = 'inline'
 })
 
 

@@ -10,7 +10,6 @@ body{
 }
 
 
-
 /* Pokemones */
 .poke-contenedor {
     display: grid;
@@ -69,10 +68,15 @@ body{
   } 
 /* Pokemones */
 
+
 /* Paginación */
 .paginación{
     margin-bottom: 50px;
     text-align: center;
+}
+
+#anterior{
+  display: none;
 }
 
 .page-item{
