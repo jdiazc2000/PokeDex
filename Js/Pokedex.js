@@ -142,6 +142,7 @@ function insertarPokemon() {
             const contenedor = document.createElement('div')
             allItems.push(contenedor)
 
+
             card.appendChild(spriteContenedor);
             card.appendChild(pokemonImagen);
             card.appendChild(pokemonNombre);
@@ -149,6 +150,7 @@ function insertarPokemon() {
             card.appendChild(pokemonVida);
             card.appendChild(pokemonHabilidad);
 
+            
             contenedor.appendChild(card);
             appNode.append(...allItems)
         })
