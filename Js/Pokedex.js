@@ -102,7 +102,7 @@ function insertarPokemon() {
                 resultado.push(pokemonInfo, responseJSON[pokemonInfo]);
             }
             
-            //*console.table(resultado);
+            console.table(resultado);
 
 
             //* Cargar carta
@@ -126,8 +126,9 @@ function insertarPokemon() {
             spriteContenedor.appendChild(pokemonNombre)
 
             const pokemonTipo = document.createElement('h2')
-            pokemonTipo.innerText = `Tipo: ${resultado[33][0].type.name}`
+            pokemonTipo.innerText = `Tipos: ${resultado[33][0].type.name} - ${resultado[33][1].type.name}`
             spriteContenedor.appendChild(pokemonTipo)
+
 
             const pokemonVida = document.createElement('h2')
             pokemonVida.innerText = `Vida: ${resultado[31][0].base_stat}`
