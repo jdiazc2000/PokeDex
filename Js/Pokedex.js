@@ -102,7 +102,7 @@ function insertarPokemon() {
                 resultado.push(pokemonInfo, responseJSON[pokemonInfo]);
             }
             
-            console.table(resultado);
+            //console.table(resultado);
 
 
             //* Cargar carta
