@@ -14,21 +14,6 @@
     display: flex;
 }
 
-.container-portada-buscar{
-    width: 100%;
-    height: 500px;
-    position: inherit;
-    background-image: url(../Pokedex/Imagenes/Buscar.webp);
-    background-color: rgb(85, 85, 85);
-    background-blend-mode: soft-light;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    max-width: 100%;
-    height: 200;
-    display: flex;
-}
-
 .container-info-portada{
     width: 850px;
     height: 200px;
@@ -52,11 +37,9 @@
 
 /* Rotación de pokebola */
 .iconify-inline{
-    animation: rotate 1.5s linear infinite; 
+    animation: rotate 2.0s normal infinite; 
   }
   @keyframes rotate{
     to{ transform: rotate(360deg); }
   }
-
-
 /* Portada */
