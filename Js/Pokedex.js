@@ -126,7 +126,7 @@ function insertarPokemon() {
             spriteContenedor.appendChild(pokemonNombre)
 
             const pokemonTipo = document.createElement('h2')
-            pokemonTipo.innerText = `Tipos: ${resultado[33][0].type.name} - ${resultado[33][1].type.name}`
+            pokemonTipo.innerText = `Tipo: ${resultado[33][0].type.name}`
             spriteContenedor.appendChild(pokemonTipo)
 
 
