@@ -1,1 +1,67 @@
-<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pokédex</title><link rel="icon" href="icono.ico"><!-- Enlaces a CSS--><link rel="stylesheet" href="Css/Busqueda.css"><link rel="stylesheet" href="Css/Portadas.css"><link rel="stylesheet" href="Css/Nav.css"><link rel="stylesheet" href="Css/Pokedex.css"><link rel="stylesheet" href="Css/Movil.css"><!-- Script a icono de menú--><script src="https://kit.fontawesome.com/a555f75e92.js" crossorigin="anonymous"></script><!-- Script fuente pokebola y corazón--><script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script></head><body><!-- NavBar--><header class="header"><nav class="nav"><a href="#" onclick="mostrarIndex()" class="logo"><b>P<span class="iconify-inline" data-icon="mdi:pokeball"></span>kédex</b></a> <button class="nav-toogle"><i class="far fa-caret-square-down"></i></button><ul class="nav-menu" id="nav-menu"><li class="nav-menu-item"><a onclick="mostrarBuscador()" style="cursor:pointer" class="nav-link">Buscador</a></li></ul></nav></header><!-- Portada--><div class="container-portada" id="container-portada" loading="lazy"><div class="container-info-portada"><h1 style="font-size:50px">P<span class="iconify-inline" id="pokebola" data-icon="mdi:pokeball"></span>kédex</h1><p>En esta página podrás encontrar o buscar todos los Pokémones que están disponibles hasta la última generación presente.</p></div></div><!-- Buscador --><form><div class="buscador"><input id="nombrepokemon" type="text" placeholder="Nombre o ID del Pokémon"><div><img class="botones" type="submit" src="Pokedex/Imagenes/Lupa.webp" alt="Buscar Pokémon" id="btnbusc"> <img class="botones" src="Pokedex/Imagenes/Borrar.webp" style="width:60px" alt="Borrar Pokémon" id="btnborr" style="display:none"></div></div></form><div class="poke-contenedor-buscar" id="poke-contenedor"></div><!-- Contenedor de Pokémones--><div class="poke-contenedor" id="poke-contenedor-index"></div><!-- Paginación de Pokémones--><div class="paginación"><button type="button" id="anterior" class="page-item"><a>Anterior</a></button> <button type="button" id="siguiente" class="page-item"><a>Siguiente</a></button> <button type="button" id="volverIndex" onclick="mostrarIndex()" class="page-item"><a>Regresar</a></button></div><footer><h2>Hecho con <span class="iconify-inline" data-icon="ant-design:heart-filled"></span> por Julio Díaz</h2></footer><!-- Script JavaScript--><script defer src="../Js/Movil.js"></script><script defer src="../Js/Pokedex.js"></script><script defer src="../Js/Movil.js"></script><!-- Script SweetAlert2--><script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script><!-- Script a icono de menú--><script src="https://kit.fontawesome.com/a555f75e92.js" crossorigin="anonymous"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Pokédex</title>
+    <link rel="icon" href="icono.ico">
+    <!-- Enlaces a CSS-->
+    <link rel="stylesheet" href="Css/bootstrap.min.css">
+    <link rel="stylesheet" href="Css/Busqueda.css">
+    <link rel="stylesheet" href="Css/Portadas.css">
+    <link rel="stylesheet" href="Css/Nav.css">
+    <link rel="stylesheet" href="Css/Pokedex.css">
+    <link rel="stylesheet" href="Css/Movil.css">
+
+    <!-- Script a icono de menú-->
+    <script src="https://kit.fontawesome.com/a555f75e92.js" crossorigin="anonymous"></script>
+    <!-- Script fuente pokebola y corazón-->
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+
+</head>
+
+<body>
+    <!-- NavBar-->
+    <header class="header">
+        <nav class="nav"><a href="#" onclick="mostrarIndex()" class="logo"><b>P<span class="iconify-inline" data-icon="mdi:pokeball"></span>kédex</b></a> <button class="nav-toogle"><i class="far fa-caret-square-down"></i></button>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-menu-item"><a onclick="mostrarBuscador()" style="cursor:pointer" class="nav-link">Buscador</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Portada-->
+    <div class="container-portada" id="container-portada">
+        <div class="container-info-portada">
+            <h1 style="font-size:50px">P<span class="iconify-inline" id="pokebola" data-icon="mdi:pokeball"></span>kédex</h1>
+            <p>En esta página podrás encontrar o buscar todos los Pokémons que encuentran disponibles hasta la última generación presente.</p>
+        </div>
+    </div>
+    <!-- Buscador -->
+    <form>
+        <div class="buscador"><input id="nombrepokemon" type="text" placeholder="Nombre o ID del Pokémon">
+            <div class="busquedabtns"><img class="botones" type="submit" src="Pokedex/Imagenes/Lupa.webp" alt="Buscar Pokémon" id="btnbusc"> <img class="botones" src="Pokedex/Imagenes/Borrar.webp" style="width:60px" alt="Borrar Pokémon" id="btnborr" style="display:none"></div>
+        </div>
+    </form>
+    <div class="poke-contenedor-buscar" id="poke-contenedor"></div>
+    <!-- Contenedor de Pokémones-->
+    <div class="poke-contenedor" id="poke-contenedor-index"></div>
+    <!-- Paginación de Pokémones-->
+    <div class="paginación"><button type="button" id="anterior" title="ANTERIOR" class="page-item"><a>Anterior</a></button> <button type="button" title="SIGUIENTE" id="siguiente" class="page-item"><a>Siguiente</a></button> <button type="button" id="volverIndex" onclick="mostrarIndex()"
+            class="page-item" title="REGRESAR"><a>Regresar</a></button></div>
+
+    <footer>
+        <h2>Hecho con <span class="iconify-inline" data-icon="ant-design:heart-filled"></span> por Julio Díaz</h2>
+    </footer>
+
+    <!-- Script JavaScript-->
+    <script defer src="../Js/Movil.js"></script>
+    <script defer src="../Js/Pokedex.js"></script>
+    <script defer src="../Js/Movil.js"></script>
+    <!-- Script SweetAlert2-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Script a icono de menú-->
+    <script src="https://kit.fontawesome.com/a555f75e92.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
