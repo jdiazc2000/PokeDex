@@ -25,6 +25,7 @@ async function fetchPokemon(id) {
         .then(res => res.json())
         .then(data => {
             createPokemon(data);
+            console.log(data)
         })
 }
 
@@ -67,9 +68,15 @@ function createPokemon(pokemon) {
     number.textContent = `#${pokemon.id.toString().padStart(3, 0)}`;
     number.classList.add('mostrarId');
 
+    const type = document.createElement('h2');
+    type.classList.add('type');
+    type.style.textTransform = 'capitalize';
+    type.textContent = pokemon.types[0].type.name
+
     card.appendChild(spriteContenedor);
     card.appendChild(name);
     card.appendChild(number);
+    card.appendChild(type);
 
     const cardBack = document.createElement('div');
     cardBack.classList.add('pokemon-block-back');
@@ -85,7 +92,7 @@ function progressBars(stats) {
     const statsContainer = document.createElement("div");
     statsContainer.classList.add("stats-container");
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
         const stat = stats[i];
 
         const statPercent = stat.base_stat / 2 + "%";
@@ -103,7 +110,6 @@ function progressBars(stats) {
         progressBar.classList.add("progress-bar");
         progressBar.classList.add("bg-danger");
 
-        progressBar.setAttribute("aria-valuenow", stat.base_stat);
         progressBar.setAttribute("aria-valuemin", 0);
         progressBar.setAttribute("aria-valuemax", 200);
         progressBar.style.width = statPercent;
@@ -212,8 +218,6 @@ function insertarPokemon() {
         })
 }
 
-
-
 //Mostrar resultado de busqueda de pokemones a traves resultado ingresado en el formulario//
 function mostrarIndex() {
     document.getElementById('poke-contenedor-index').style.display = 'grid'
@@ -231,7 +235,6 @@ function mostrarIndex() {
         document.getElementById('anterior').style.display = 'none';
     }
 }
-
 
 //Mostrar busqueda de pokemones//
 function mostrarBuscador() {
@@ -265,8 +268,9 @@ siguiente.addEventListener("click", () => {
     removeChildNodes(pokemonContenedor);
     fetchPokemons(offset, limit);
     document.getElementById('anterior').style.display = 'inline'
-})
 
+
+})
 
 //Borrar pokemones buscados
 function borrarPokemon() {
